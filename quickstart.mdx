@@ -1,80 +1,169 @@
 ---
-title: "Quickstart"
-description: "Start building awesome documentation in minutes"
+title: "WABA Account Setup"
+description: "Setup WhatsApp Business API credentials and configuration"
 ---
 
-## Get started in three steps
+## How to get App ID and App Secret?
 
-Get your documentation site running locally and make your first customization.
-
-### Step 1: Set up your local environment
-
-<AccordionGroup>
-  <Accordion icon="copy" title="Clone your docs locally">
-    During the onboarding process, you created a GitHub repository with your docs content if you didn't already have one. You can find a link to this repository in your [dashboard](https://dashboard.mintlify.com).
-    
-    To clone the repository locally so that you can make and preview changes to your docs, follow the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) guide in the GitHub docs.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Start the preview server">
-    1. Install the Mintlify CLI: `npm i -g mint`
-    2. Navigate to your docs directory and run: `mint dev`
-    3. Open `http://localhost:3000` to see your docs live!
-    
-    <Tip>Your preview updates automatically as you edit files.</Tip>
-  </Accordion>
-</AccordionGroup>
-
-### Step 2: Deploy your changes
-
-<AccordionGroup>
-  <Accordion icon="github" title="Install our GitHub app">
-    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
-    
-    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
-</Accordion>
-<Accordion icon="palette" title="Update your site name and colors">
-    For a first change, let's update the name and colors of your docs site.
-
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
-
-    <Tip>Try changing the primary color to see an immediate difference!</Tip>
-  </Accordion>
-</AccordionGroup>
-
-### Step 3: Go live
-
-<Accordion icon="rocket" title="Publish your docs">
-  1. Commit and push your changes.
-  2. Your docs will update and be live in moments!
-</Accordion>
-
-## Next steps
-
-Now that you have your docs running, explore these key features:
-
-<CardGroup cols={2}>
-
-<Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
-  Learn MDX syntax and start writing your documentation.
-</Card>
-
-<Card title="Customize style" icon="palette" href="/essentials/settings">
-  Make your docs match your brand perfectly.
-</Card>
-
-<Card title="Add code examples" icon="square-code" href="/essentials/code">
-  Include syntax-highlighted code blocks.
-</Card>
-
-<Card title="API documentation" icon="code" href="/api-reference/introduction">
-  Auto-generate API docs from OpenAPI specs.
-</Card>
-
-</CardGroup>
-
+1. Go to the [Facebook Developer Console](https://developers.facebook.com/apps) and create a **Business App** for your [Business Manager Account](https://business.facebook.com) if it is not already created.
+2. Open the created app.
+3. Navigate to **Settings → Basic**.
+4. Copy the **App ID** and **App Secret** fields.
 <Note>
-  **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
+Reference Screenshot:  
+https://cdn.evenuefy.com/general/documentation/fb_appId_and_secret.png
 </Note>
+
+---
+
+## How to get Access Token (Public Access Token)?
+
+1. Go to your [Business Manager Account](https://business.facebook.com).
+2. Select your **Business Account / Business Page** from the dropdown.\
+   Reference: https://cdn.evenuefy.com/general/documentation/fb_bma_select_ba.png
+3. Click the **Settings** button at the bottom.\
+   Reference: https://cdn.evenuefy.com/general/documentation/fb_bma_click_setting.png
+4. Navigate to **Users → System Users**.
+5. Add a **System User** with the required role if not already added.
+6. Select the user and click **Add Assets** to assign your App.
+
+Reference Steps:
+
+- https://cdn.evenuefy.com/general/documentation/fb_bma_select_add_assets.png
+- https://cdn.evenuefy.com/general/documentation/fb_bma_assign_asset_app.png
+
+7. Click **Generate New Token**.
+
+Permissions required:
+- whatsapp_business_messaging
+- whatsapp_business_management
+
+
+8. Click **Generate Token** and copy the generated token.
+
+<Warning>
+The generated token will only be shown once. Save it securely because Facebook will not store it.
+</Warning>
+
+Reference Screenshot:  
+https://cdn.evenuefy.com/general/documentation/fb_bma_copy_access_token.png
+
+---
+
+## How to get API Version?
+
+1. Open the [Facebook Developer Console](https://developers.facebook.com/apps).
+2. Select your app.
+3. Navigate to **Settings → Advanced**.
+4. Scroll to **Upgrade API Version**.
+
+Reference:  
+https://cdn.evenuefy.com/general/documentation/fb_app_api_version.png
+
+---
+
+## How to get API URL?
+
+The WhatsApp Business Platform provides multiple APIs.
+
+### Cloud API
+
+Use the Graph API endpoint:
+https://graph.facebook.com/v14.0
+
+
+### On-Premises API
+
+Use your **own server domain URL**.
+
+### Business Management API
+
+Used for managing WhatsApp Business accounts, templates, and phone numbers.
+
+For more details see:  
+https://developers.facebook.com/docs/whatsapp/overview
+
+---
+
+## How to Configure Webhook?
+
+1. Open the **Facebook Developer Console**.
+2. Setup the **WhatsApp Product** in your app.
+
+Reference:  
+https://cdn.evenuefy.com/general/documentation/fb_app_setup_whatsapp.png
+
+3. Navigate to:
+Products → WhatsApp → Configuration
+
+
+Reference:  
+https://cdn.evenuefy.com/general/documentation/fb_app_wa_webhook_configure.png
+
+4. Configure the following values:
+
+- Callback URL
+- Verify Token
+- Webhook Fields
+
+5. Click **Edit** to set the **Callback URL** and **Verify Token**.
+
+6. Click **Manage** under Webhook Fields and subscribe to:
+
+messages
+
+Reference:  
+https://cdn.evenuefy.com/general/documentation/fb_app_webhook_fields.png
+
+---
+
+## How to get Phone Number ID & Business Account ID?
+
+1. Go to:
+Products → WhatsApp → Getting Started
+
+
+2. Scroll to the bottom and click **Add Phone Number** if not already added.
+
+Reference:  
+https://cdn.evenuefy.com/general/documentation/fb_app_add_number.png
+
+3. Scroll to the section:
+Send and Receive Messages → Step 1: Select phone numbers
+
+
+Reference:  
+https://cdn.evenuefy.com/general/documentation/fb_app_select_phone_number.png
+
+4. Copy the following IDs:
+
+### WhatsApp Business Account ID
+
+Reference:  
+https://cdn.evenuefy.com/general/documentation/fb_app_business_account_id.png
+
+### Phone Number ID
+
+Reference:  
+https://cdn.evenuefy.com/general/documentation/fb_app_phone_number_id.png
+
+---
+
+## Supported Media Types
+
+Reference:  
+https://developers.facebook.com/docs/whatsapp/cloud-api/reference/media#supported-media-types
+
+| Media | Supported Types | Size Limit |
+|------|------|------|
+| audio | `audio/aac`, `audio/mp4`, `audio/mpeg`, `audio/amr`, `audio/ogg` (only opus codec supported) | 16MB |
+| document | `text/plain`, `application/pdf`, `application/msword`, `application/vnd.ms-excel`, `application/vnd.ms-powerpoint`, `application/vnd.openxmlformats-officedocument.wordprocessingml.document`, `application/vnd.openxmlformats-officedocument.presentationml.presentation`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` | 100MB |
+| image | `image/jpeg`, `image/png` (must be 8-bit RGB or RGBA) | 5MB |
+| video | `video/mp4`, `video/3gp` (H.264 video codec + AAC audio codec supported) | 16MB |
+| sticker | `image/webp` | Static: 100KB, Animated: 500KB |
+
+---
+
+<Tip>
+Use media uploads when sending WhatsApp template messages or interactive messages through the Cloud API.
+</Tip>
