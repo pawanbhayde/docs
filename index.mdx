@@ -1,97 +1,168 @@
 ---
 title: "Introduction"
-description: "Welcome to the new home for your documentation"
+description: "Overview of the Saanchar marketing and communication platform"
 ---
 
-## Setting up
+## What is Saanchar?
 
-Get your documentation site up and running in minutes.
+**Saanchar** is a Marketing & Communication SaaS platform that helps businesses send and manage **bulk messaging campaigns** across channels like **WhatsApp and Email** from a single dashboard or via developer APIs.
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
+Instead of integrating multiple messaging services individually, businesses connect their communication channels to Saanchar and manage everything in one centralized system.
 
-## Make it yours
+<Tip>
+Saanchar acts as a unified communication infrastructure for marketing, notifications, and customer engagement.
+</Tip>
 
-Design a docs site that looks great and empowers your users.
+---
 
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
-  </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
-  </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
-  </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
-  </Card>
-</Columns>
+## Core Idea
 
-## Create beautiful pages
+Saanchar simplifies business communication.
 
-Everything you need to create world-class documentation.
+Companies often need multiple messaging systems such as WhatsApp APIs, email infrastructure, campaign tools, and analytics dashboards. Managing all of these separately increases complexity and cost.
 
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
-  </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
+With Saanchar, businesses:
 
-## Need inspiration?
+- Connect their messaging channels
+- Manage campaigns
+- Send messages in bulk
+- Monitor delivery and engagement
 
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+—all from one platform.
+
+---
+
+## Main Capabilities
+
+### 1. WhatsApp Marketing
+
+Businesses can connect their **WhatsApp Business API (WABA)** accounts and run messaging campaigns.
+
+Features include:
+
+- Connect WhatsApp Business API accounts
+- Send template-based messages
+- Broadcast bulk campaigns
+- Manage customer conversations
+- Track delivery status and engagement
+
+---
+
+### 2. Email Marketing
+
+Saanchar also enables businesses to run **email marketing campaigns** using verified sending domains.
+
+Capabilities include:
+
+- Add and verify sending domains (e.g., AWS SES)
+- Send bulk email campaigns
+- Track email opens, clicks, and delivery
+- Create and manage email templates
+
+---
+
+### 3. Campaign Management
+
+Users can create and manage marketing campaigns directly from the dashboard.
+
+Typical workflow:
+
+1. Create a campaign
+2. Upload or import contact lists
+3. Schedule the campaign or send instantly
+4. Monitor analytics such as sent, delivered, and failed messages
+
+---
+
+## Developer APIs
+
+Saanchar provides APIs that allow developers to integrate messaging directly into their applications.
+
+Common use cases include:
+
+- Sending OTP verification codes
+- Transactional notifications
+- Marketing automation
+- Order status updates
+- Customer alerts
+
+```bash
+POST /api/v1/whatsapp/send
+````
+
+<Tip>
+APIs allow SaaS platforms and applications to automate messaging without using the dashboard.
+</Tip>
+
+---
+
+## Platform Components
+
+### Dashboard
+
+The dashboard is the web interface where users manage their communication workflows.
+
+Users can:
+
+* Connect messaging channels
+* Create campaigns
+* Manage contacts
+* View campaign analytics and delivery reports
+
+---
+
+### Messaging Engine
+
+The messaging engine is the backend service responsible for sending messages at scale.
+
+Responsibilities include:
+
+* Processing campaigns
+* Queueing messages
+* Delivering messages via WhatsApp or Email APIs
+* Handling retries and failures
+
+---
+
+### Contact Management
+
+Saanchar includes a contact management system for storing and organizing customer data.
+
+This includes:
+
+* Customer contact lists
+* Segments and groups
+* Campaign recipients
+
+---
+
+## Target Users
+
+Saanchar is designed for organizations that require scalable messaging infrastructure.
+
+Typical users include:
+
+* Startups
+* SaaS platforms
+* E-commerce companies
+* Marketing teams
+* Customer support teams
+
+---
+
+## Example Workflow
+
+A typical campaign workflow looks like this:
+
+1. A business signs up on Saanchar.
+2. The business connects a WhatsApp Business API account or verifies an email sending domain.
+3. Contacts are uploaded or imported into the platform.
+4. A campaign is created and scheduled or sent instantly.
+5. Saanchar processes the campaign and sends messages in bulk.
+6. The user monitors delivery analytics and campaign performance from the dashboard.
+
+---
+
+<Note>
+To get started, proceed to the **WABA Account Setup** guide to connect your WhatsApp Business API.
+</Note>
