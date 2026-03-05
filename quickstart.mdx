@@ -9,10 +9,10 @@ description: "Setup WhatsApp Business API credentials and configuration"
 2. Open the created app.
 3. Navigate to **Settings → Basic**.
 4. Copy the **App ID** and **App Secret** fields.
-<Note>
-Reference Screenshot:  
-https://cdn.evenuefy.com/general/documentation/fb_appId_and_secret.png
-</Note>
+
+<Frame>
+  ![Image](/images/image-1.png)
+</Frame>
 
 ---
 
@@ -35,17 +35,17 @@ Reference Steps:
 7. Click **Generate New Token**.
 
 Permissions required:
+
 - whatsapp_business_messaging
 - whatsapp_business_management
-
 
 8. Click **Generate Token** and copy the generated token.
 
 <Warning>
-The generated token will only be shown once. Save it securely because Facebook will not store it.
+  The generated token will only be shown once. Save it securely because Facebook will not store it.
 </Warning>
 
-Reference Screenshot:  
+Reference Screenshot:\
 https://cdn.evenuefy.com/general/documentation/fb_bma_copy_access_token.png
 
 ---
@@ -57,7 +57,7 @@ https://cdn.evenuefy.com/general/documentation/fb_bma_copy_access_token.png
 3. Navigate to **Settings → Advanced**.
 4. Scroll to **Upgrade API Version**.
 
-Reference:  
+Reference:\
 https://cdn.evenuefy.com/general/documentation/fb_app_api_version.png
 
 ---
@@ -68,9 +68,7 @@ The WhatsApp Business Platform provides multiple APIs.
 
 ### Cloud API
 
-Use the Graph API endpoint:
-https://graph.facebook.com/v14.0
-
+Use the Graph API endpoint: https://graph.facebook.com/v14.0
 
 ### On-Premises API
 
@@ -80,7 +78,7 @@ Use your **own server domain URL**.
 
 Used for managing WhatsApp Business accounts, templates, and phone numbers.
 
-For more details see:  
+For more details see:\
 https://developers.facebook.com/docs/whatsapp/overview
 
 ---
@@ -90,14 +88,12 @@ https://developers.facebook.com/docs/whatsapp/overview
 1. Open the **Facebook Developer Console**.
 2. Setup the **WhatsApp Product** in your app.
 
-Reference:  
+Reference:\
 https://cdn.evenuefy.com/general/documentation/fb_app_setup_whatsapp.png
 
-3. Navigate to:
-Products → WhatsApp → Configuration
+3. Navigate to: Products → WhatsApp → Configuration
 
-
-Reference:  
+Reference:\
 https://cdn.evenuefy.com/general/documentation/fb_app_wa_webhook_configure.png
 
 4. Configure the following values:
@@ -107,63 +103,57 @@ https://cdn.evenuefy.com/general/documentation/fb_app_wa_webhook_configure.png
 - Webhook Fields
 
 5. Click **Edit** to set the **Callback URL** and **Verify Token**.
-
 6. Click **Manage** under Webhook Fields and subscribe to:
 
 messages
 
-Reference:  
+Reference:\
 https://cdn.evenuefy.com/general/documentation/fb_app_webhook_fields.png
 
 ---
 
 ## How to get Phone Number ID & Business Account ID?
 
-1. Go to:
-Products → WhatsApp → Getting Started
-
-
+1. Go to: Products → WhatsApp → Getting Started
 2. Scroll to the bottom and click **Add Phone Number** if not already added.
 
-Reference:  
+Reference:\
 https://cdn.evenuefy.com/general/documentation/fb_app_add_number.png
 
-3. Scroll to the section:
-Send and Receive Messages → Step 1: Select phone numbers
+3. Scroll to the section: Send and Receive Messages → Step 1: Select phone numbers
 
-
-Reference:  
+Reference:\
 https://cdn.evenuefy.com/general/documentation/fb_app_select_phone_number.png
 
 4. Copy the following IDs:
 
 ### WhatsApp Business Account ID
 
-Reference:  
+Reference:\
 https://cdn.evenuefy.com/general/documentation/fb_app_business_account_id.png
 
 ### Phone Number ID
 
-Reference:  
+Reference:\
 https://cdn.evenuefy.com/general/documentation/fb_app_phone_number_id.png
 
 ---
 
 ## Supported Media Types
 
-Reference:  
+Reference:\
 https://developers.facebook.com/docs/whatsapp/cloud-api/reference/media#supported-media-types
 
-| Media | Supported Types | Size Limit |
-|------|------|------|
-| audio | `audio/aac`, `audio/mp4`, `audio/mpeg`, `audio/amr`, `audio/ogg` (only opus codec supported) | 16MB |
-| document | `text/plain`, `application/pdf`, `application/msword`, `application/vnd.ms-excel`, `application/vnd.ms-powerpoint`, `application/vnd.openxmlformats-officedocument.wordprocessingml.document`, `application/vnd.openxmlformats-officedocument.presentationml.presentation`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` | 100MB |
-| image | `image/jpeg`, `image/png` (must be 8-bit RGB or RGBA) | 5MB |
-| video | `video/mp4`, `video/3gp` (H.264 video codec + AAC audio codec supported) | 16MB |
-| sticker | `image/webp` | Static: 100KB, Animated: 500KB |
+| Media    | Supported Types                                                                                                                                                                                                                                                                                                                                 | Size Limit                     |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| audio    | `audio/aac`, `audio/mp4`, `audio/mpeg`, `audio/amr`, `audio/ogg` (only opus codec supported)                                                                                                                                                                                                                                                    | 16MB                           |
+| document | `text/plain`, `application/pdf`, `application/msword`, `application/vnd.ms-excel`, `application/vnd.ms-powerpoint`, `application/vnd.openxmlformats-officedocument.wordprocessingml.document`, `application/vnd.openxmlformats-officedocument.presentationml.presentation`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` | 100MB                          |
+| image    | `image/jpeg`, `image/png` (must be 8-bit RGB or RGBA)                                                                                                                                                                                                                                                                                           | 5MB                            |
+| video    | `video/mp4`, `video/3gp` (H.264 video codec + AAC audio codec supported)                                                                                                                                                                                                                                                                        | 16MB                           |
+| sticker  | `image/webp`                                                                                                                                                                                                                                                                                                                                    | Static: 100KB, Animated: 500KB |
 
 ---
 
 <Tip>
-Use media uploads when sending WhatsApp template messages or interactive messages through the Cloud API.
+  Use media uploads when sending WhatsApp template messages or interactive messages through the Cloud API.
 </Tip>
